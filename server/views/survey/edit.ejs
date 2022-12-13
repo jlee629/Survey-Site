@@ -1,0 +1,100 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
+
+<!-- Content  for the edit page -->
+<div class="container" id="editBox">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <br>
+      <h1><%=title %></h1>
+      <br>
+      <form class="form" method="post">
+        <div class="from-group">
+          <label for="surveyTextField">Survey Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="surveyTextField"
+            placeholder="Enter the Survey Title:"
+            name="name"
+            value="<%= survey.name %>"
+            required
+          />
+        </div>
+        <br>
+        <div class="from-group">
+          <label for="ownerTextField">Owner</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ownerTextField"
+            placeholder="Enter the Survey's Owner:"
+            name="owner"
+            value="<%= survey.owner %>"
+            required
+          />
+        </div>
+        <br>
+        <div class="from-group">
+          <label for="startDateTextField">Start Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="startDateTextField"
+            placeholder="Enter the Start Date:"
+            name="startDate"
+            value="<%= survey.startDate %>"
+            required
+          />
+        </div>
+        <br>
+        <div class="from-group">
+          <label for="endDateTextField">End Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="endDateTextField"
+            placeholder="Enter the End Date:"
+            name="endDate"
+            value="<%= survey.endDate %>"
+            required
+          />
+        </div>
+        <br>
+        <div class="from-group">
+          <label for="isActiveTextField">Active Status</label>
+          <br>
+          <input
+          type="radio"
+          id="isActiveDateTextField"
+          name="isActive"
+          <%if(survey.isActive=="Y"){%>
+            <%="checked"%>
+          <%}%>
+          value="Y"
+          required
+          />
+          <label for="isActiveDateTextField">Active</label>
+          <input
+          type="radio"
+          id="isInactiveDateTextField"
+          name="isActive"
+          <%if(survey.isActive=="N"){%>
+            <%="checked"%>
+          <%}%>
+          value="N"
+          required
+          />
+          <label for="isInactiveDateTextField">Inactive</label>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit" id="btn1">
+          <i class="fas fa-edit"></i>Submit
+        </button>
+        <a href="/survey-list" class="btn btn-warning" id="btn1">
+          <i class="fas fa-undo"></i>Cancel
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>

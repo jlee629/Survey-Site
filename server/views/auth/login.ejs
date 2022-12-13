@@ -1,0 +1,40 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
+
+<main class="container_log_page">
+
+  <div class="login">
+    <div class="avatar">
+      <img src="/Assets/images/Logo.png" />
+    </div>
+    <h2 style="color: white;">Login</h2>
+    <h3 style="color: white;">Welcome back!</h3>
+
+    <form class="login-form" method="POST" action="">
+      <div class="textbox">
+        <input type="textbox"
+        placeholder="Enter Username"
+        class="form-control"
+        name="username"
+        id="username"
+        required
+        autofocus
+        />
+      </div>
+      <div class="textbox">
+        <input type="password"
+         placeholder="Enter Password"
+         class="form-control"
+         id="password"
+         name="password"
+         required
+          />
+          </div>
+      <button type="submit">LOGIN</button>
+      <% if(messages.length > 0) {%>
+        <div class="alert alert-danger"> <%= messages %> </div>
+      <%} %>
+      <a href="/register">Register Here!</a>
+    </form>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>
