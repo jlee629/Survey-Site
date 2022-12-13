@@ -1,6 +1,6 @@
 # ALPHARD
 
-Team project - COMP229
+Team project
 
 1. David Pietrocola –301247544 
 2. Jacob Todasco – 301251200 
